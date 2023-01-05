@@ -23,7 +23,8 @@ sudo apt-get install ros-noetic-jackal-simulator ros-noetic-jackal-desktop-*
 ```bash
 sudo apt-get install ros-$ROS_DISTRO-realsense2-camera ros-$ROS_DISTRO-realsense2-description ros-$ROS_DISTRO-gazebo-plugins
 ```
-Then create your customized URDF file, for example `$HOME/Desktop/realsense.urdf.xacro` .
+Then create your customized URDF file, for example `$HOME/Desktop/realsense.urdf.xacro`.
+
 Put the following in it:
 ```bash
 <?xml version="1.0"?>
@@ -122,10 +123,26 @@ Erase all and put the following in it:
 ```bash
 
 ```
-this map is L8 1st floor and the last part of the code is related with Actors(Human model).
+This map is L8 1st floor and the last part of the code is related with Actors(Human model).
 
-You can customize the Actor and the objects : <https://classic.gazebosim.org/tutorials?tut=actor&cat=build_robot>, <http://wiki.ros.org/simulator_gazebo/Tutorials/SpawningObjectInSimulation>
+You can customize the Actor and the objects : 
 
+<https://classic.gazebosim.org/tutorials?tut=actor&cat=build_robot>
+
+<http://wiki.ros.org/simulator_gazebo/Tutorials/SpawningObjectInSimulation>
+
+4) Change the 'object_deprojector.py'
+
+'object_deprojector.py'파일 내용 수정사항
+
+> subscribe 되는 메세지 이름 변경
+
+```bash
+#rospy.Subscriber("camera/color/image_raw/compressed", CompressedImage, self.bridge_color_image)
+#rospy.Subscriber('camera/depth/image_raw', Image, self.update_depth_image)
+rospy.Subscriber("realsense/color/image_raw/compressed", CompressedImage, self.bridge_color_image)
+rospy.Subscriber("realsense/depth/image_rect_raw", Image, self.update_depth_image)
+```
 
 
 ## 3. Usage
