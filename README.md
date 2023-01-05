@@ -119,7 +119,7 @@ Follow the path and fix the `jackal_race.world` file. Erase all and put the foll
 ```bash
 
 ```
-this map is L8 1st floor and the last part of the code is related with Actors(Human model).
+this map is L8 1st floor and the last part of the code is related with Actors(Human model)./n
 You can customize the Actor and the objects : <https://classic.gazebosim.org/tutorials?tut=actor&cat=build_robot>, <http://wiki.ros.org/simulator_gazebo/Tutorials/SpawningObjectInSimulation>
 
 
