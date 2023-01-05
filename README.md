@@ -13,7 +13,7 @@ Human 추종 알고리즘
 ## 2. Requirements
 
 1) ROS jackal simulation install
-   src=":https://www.clearpathrobotics.com/assets/guides/noetic/jackal/simulation.html"
+   :<https://www.clearpathrobotics.com/assets/guides/noetic/jackal/simulation.html>
 
 ```bash
 sudo pip3 install -r requiremets.txt
