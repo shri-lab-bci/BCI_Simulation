@@ -115,11 +115,15 @@ Put the following in it:
 ```
 3)Change the map file
 `/opt/ros/noetic/share/jackal_gazebo/worlds/jackal_race.world`
-Follow the path and fix the `jackal_race.world` file. Erase all and put the following in it:
+
+Follow the path and fix the `jackal_race.world` file. 
+
+Erase all and put the following in it:
 ```bash
 
 ```
-this map is L8 1st floor and the last part of the code is related with Actors(Human model)./n
+this map is L8 1st floor and the last part of the code is related with Actors(Human model).
+
 You can customize the Actor and the objects : <https://classic.gazebosim.org/tutorials?tut=actor&cat=build_robot>, <http://wiki.ros.org/simulator_gazebo/Tutorials/SpawningObjectInSimulation>
 
 
