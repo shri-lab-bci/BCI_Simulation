@@ -1,14 +1,19 @@
-Human 추종 알고리즘 Gazebo 구현 설명서
+BCI_Simulation ROS Gazebo 구현 설명서
 ===========================================================
 
-Jackal Robot Simulation 환경 구축
+Jackal Robot Simulation 환경 구축 
+Human 추종 알고리즘
 
 ## 1. Description
 
-- python 3.7
+- ROS Noetic 
+- python 3.8.10
 
 
 ## 2. Requirements
+
+1) ROS jackal simulation install
+   src=":https://www.clearpathrobotics.com/assets/guides/noetic/jackal/simulation.html"
 
 ```bash
 sudo pip3 install -r requiremets.txt
