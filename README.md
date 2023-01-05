@@ -135,7 +135,7 @@ You can customize the Actor and the objects :
 
 'object_deprojector.py'파일 내용 수정사항
 
-> subscribe 되는 메세지 이름 변경
+> subscriber 이름 변경
 
 ```bash
 #rospy.Subscriber("camera/color/image_raw/compressed", CompressedImage, self.bridge_color_image)
@@ -143,7 +143,100 @@ You can customize the Actor and the objects :
 rospy.Subscriber("realsense/color/image_raw/compressed", CompressedImage, self.bridge_color_image)
 rospy.Subscriber("realsense/depth/image_rect_raw", Image, self.update_depth_image)
 ```
+> update_depth_image 함수 변경
 
+```bash
+    def update_depth_image(self, data):
+        try:
+            #cv_depth_image = self.bridge.imgmsg_to_cv2(data, "16UC1") 인코딩 형식 변경(D435)!!
+            cv_depth_image = self.bridge.imgmsg_to_cv2(data, "32FC1")
+        except CvBridgeError as e:
+            print(e)
+```
+
+>update_object_count 함수 변경
+
+```bash
+def update_object_count(self, data):
+        object_count = data.count
+        bounding_boxes = self.bounding_boxes
+
+        object_infos = ObjectInfos()
+        if object_count != 0:
+            try:
+                for i in range(len(bounding_boxes.bounding_boxes)):
+                    if bounding_boxes.bounding_boxes[i].Class == 'person':
+                        probability = bounding_boxes.bounding_boxes[i].probability
+                        xmin = bounding_boxes.bounding_boxes[i].xmin
+                        ymin = bounding_boxes.bounding_boxes[i].ymin
+                        xmax = bounding_boxes.bounding_boxes[i].xmax
+                        ymax = bounding_boxes.bounding_boxes[i].ymax
+                        _id = i + 1
+                        _class = bounding_boxes.bounding_boxes[i].Class
+
+                        depth_array = self.depth_image[ymin:ymax, xmin:xmax]
+                        #median_depth = np.median(depth_array) !)nan값을 포함하기때문에 median->namedian함수 사용
+                        median_depth = np.nanmedian(depth_array) 
+                        median_depth_index = np.where(depth_array == median_depth)
+
+                        #median_depth = median_depth * 0.001 !)이 라인을 지워야 거리가 올바르게 표시되었습니다.
+                        #print(depth_array)
+                        #print(median_depth)
+                        center_ppx = int((xmin + xmax) / 2)
+                        center_ppy = int((ymin + ymax) / 2) 
+                        depth_point = rs.rs2_deproject_pixel_to_point(self.aligned_depth_intrin, [center_ppx, center_ppy], median_depth)
+			 
+                        # Visualization
+                        #print(median_depth)
+                        if median_depth >= 0.5 and median_depth <= 5.0:
+                            circle_size = 12
+                            circle_color = (0, 0, 255)
+                        else:
+                            circle_size = 5
+                            circle_color = (0, 255, 255)
+                                
+                        cv2.circle(self.color_image, (center_ppx, center_ppy), circle_size, circle_color, -1)
+                        # cv2.rectangle(self.color_image, (xmin, ymin), (xmax, ymax), (38, 199, 255), 2)
+                        # cv2.rectangle(self.color_image, (xmin - 1, ymin - 10), (xmax + 1, ymin + 10), (38, 199, 255), -1)
+                        # lineType = cv2.LINE_AA if cv2.__version__ > '3' else cv2.CV_AA
+                        # cv2.putText(self.color_image, '(' + str(i+1) + ') ' + _class + ' : %.2f' % probability, (xmin + 5, ymin + 5), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 1, lineType)
+
+                        object_info = ObjectInfo()
+                        object_info.id = int(_id)
+                        object_info.point.x = float(depth_point[2])
+                        object_info.point.y = float(depth_point[0]) * -1
+                        object_info.point.z = float(depth_point[1])
+                        object_infos.object_infos.append(object_info)
+
+            except:
+                pass
+
+        else:
+            object_infos.object_infos = []
+
+        try:
+            object_infos.header = self.get_header()
+            self.object_info_pub.publish(object_infos)
+
+            compressed_recognition_image = CompressedImage()
+            compressed_recognition_image.header.stamp = rospy.Time.now()
+            compressed_recognition_image.format = "jpeg"
+            compressed_recognition_image.data = cv2.imencode('.jpg', self.color_image)[1].tobytes()
+            self.recognition_image_pub.publish(compressed_recognition_image)
+
+        except CvBridgeError as e:
+            pass
+```
+5) Change the 'Object_tf_br.cpp'
+
+'Object_tf_br.cpp' 파일 내용 수정사항
+
+> tf 로 전사해줄때 parent를 변경
+
+```bash
+    #transformStamped.header.frame_id = "camera_link";
+	 transformStamped.header.frame_id = "front_realsense";
+```
 
 ## 3. Usage
 Use upper 3.x python version
