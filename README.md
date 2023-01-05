@@ -1,8 +1,7 @@
-Template Repository
+Human 추종 알고리즘 Gazebo 구현 설명서
 ===========================================================
 
-This is a Template Repository
-
+Jackal Robot Simulation 환경 구축
 
 ## 1. Description
 
