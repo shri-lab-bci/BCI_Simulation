@@ -113,10 +113,16 @@ Put the following in it:
   </joint>
 </robot>
 ```
+3)Change the map file
+
+
 ## 3. Usage
 Use upper 3.x python version
 ```bash
-./src/main.py
+export JACKAL_URDF_EXTRAS=$HOME/Desktop/realsense.urdf.xacro
+```
+```bash
+roslaunch jackal_gazebo jackal_world.launch
 ```
 or
 ```bash
