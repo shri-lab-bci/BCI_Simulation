@@ -18,7 +18,7 @@ Human 추종 알고리즘
 ```bash
 sudo apt-get install ros-noetic-jackal-simulator ros-noetic-jackal-desktop-*
 ```
-2)RealSense D435 Plugin
+2) RealSense D435 Plugin
 :<https://www.clearpathrobotics.com/assets/guides/noetic/jackal/additional_sim_worlds.html>
 ```bash
 sudo apt-get install ros-$ROS_DISTRO-realsense2-camera ros-$ROS_DISTRO-realsense2-description ros-$ROS_DISTRO-gazebo-plugins
@@ -114,16 +114,14 @@ Put the following in it:
   </joint>
 </robot>
 ```
-3)Change the map file
+3) Change the map file
 `/opt/ros/noetic/share/jackal_gazebo/worlds/jackal_race.world`
 
 Follow the path and fix the `jackal_race.world` file. 
 
-Erase all and put the following in it:
-```bash
+Erase all and paste the '1st_floor_L8.world' file(공유 파일 내용만 복붙 just contents) in it:
 
-```
-This map is L8 1st floor and the last part of the code is related with Actors(Human model).
+This map describes L8 1st floor and the last part of the code is related with Actors(Human model).
 
 You can customize the Actor and the objects : 
 
@@ -235,22 +233,58 @@ def update_object_count(self, data):
 
 ```bash
     #transformStamped.header.frame_id = "camera_link";
-	 transformStamped.header.frame_id = "front_realsense";
+    transformStamped.header.frame_id = "front_realsense";
 ```
 
 ## 3. Usage
 Use upper 3.x python version
+
+Terminal 1
 ```bash
 export JACKAL_URDF_EXTRAS=$HOME/Desktop/realsense.urdf.xacro
-```
-```bash
+
 roslaunch jackal_gazebo jackal_world.launch
 ```
 
+Terminal2
 ```bash
-python3 src/main.py
+ssh name@ip_address
+
+rosrun sc_interaction object_deprojector.py
 ```
 
+Terminal3
+```bash
+rostopic pub -r 4025 /darknet_ros/found_object darknet_ros_msgs/ObjectCount "header:
+	  seq: 0
+	  stamp:
+	    secs: 0
+	    nsecs: 0
+	  frame_id: 'detection'
+	count: 1" 
+```
+
+Terminal4
+```bash
+rostopic pub -r 4025 /darknet_ros/found_object darknet_ros_msgs/ObjectCount "header:
+	  seq: 0
+	  stamp:
+	    secs: 0
+	    nsecs: 0
+	  frame_id: 'detection'
+	count: 1" 
+```
+
+Terminal5
+```bash
+rosrun sc_interaction object_deprojector.py 
+```
+
+Terminal5
+```bash
+rosrun sc_interaction object_tf_br
+```
+You can see the TF or sensor data by 'roslaunch jackal_viz view_robot.launch'.
 
 
 ## 4. Markdown Syntax
