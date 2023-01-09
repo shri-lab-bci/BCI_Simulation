@@ -293,3 +293,66 @@ GAZEBO setting
     <arg name="joystick" value="$(arg joystick)" />
   </include>
 ```
+
+2) Actor 설정
+
+액터의 원하는 경로와 시간, 자세 등을 설정할 수 있습니다.
+<waypoint>로 경로를 설정합니다.
+	<time>은 액터가 있는 시각.
+	<pose>는 액터의 위치 x,y,z, gx, gy,gz 순서입니다. 사람은 z축 방향만 설정해주면되기 때문에 gz로 바라보는 각도를 설정해줍니다. 0 ~ pi(3.14)로 나타내고 음수도 표현 가능합니다.
+<skin> 과 <animation>으로 동작 모션 표현.
+	
+아래는 사각형으로 모양으로 이동하는 코드입니다.
+
+```bash
+<actor name="actor">
+        <skin>
+          <filename>walk.dae</filename>
+        </skin>
+        <animation name="walking">
+          <filename>walk.dae</filename>
+          <interpolate_x>true</interpolate_x>
+        </animation>
+        <script>
+          <trajectory id="0" type="walking">
+            <waypoint>
+              <time>0</time>
+              <pose>5 2 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>2</time>
+              <pose>5 -4.5 0 0 0 -1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>2.5</time>
+              <pose>5 -4.5 0 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+              <time>7</time>
+              <pose>16 -4.5 0 0 0 0</pose>
+            </waypoint>
+            <waypoint>
+              <time>7.5</time>
+              <pose>16 -4.5 0 0 0 1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>10.5</time>
+              <pose>16 2 0 0 0 1.57</pose>
+            </waypoint>
+            <waypoint>
+              <time>11.5</time>
+              <pose>16 2 0 0 0 3.14</pose>
+            </waypoint>
+            <waypoint>
+              <time>16.5</time>
+              <pose>5 2 0 0 0 3.14</pose>
+            </waypoint>
+            <waypoint>
+              <time>17.5</time>
+              <pose>5 2 0 0 0 -1.57</pose>
+            </waypoint>
+          </trajectory>
+        </script>
+      </actor>
+
+```
