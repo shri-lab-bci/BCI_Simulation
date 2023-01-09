@@ -276,3 +276,20 @@ rosrun sc_interaction object_tf_br
 
 You can see the TF or sensor data by 'roslaunch jackal_viz view_robot.launch'.
 
+## 4. Detail
+GAZEBO setting
+
+1) jackal robot 초기 위치 설정 
+
+`/opt/ros/noetic/share/jackal_gazebo/launch/jackal_world.launch` 파일 내부 arg x, y, z 값 설정.
+```bash
+<!-- Spawn Jackal -->
+  <include file="$(find jackal_gazebo)/launch/spawn_jackal.launch">
+    <arg name="x" value="0" />
+    <arg name="y" value="0" />
+    <arg name="z" value="1.0" />
+    <arg name="yaw" value="0" />
+    <arg name="config" value="$(arg config)" />
+    <arg name="joystick" value="$(arg joystick)" />
+  </include>
+```
