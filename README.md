@@ -119,7 +119,7 @@ Put the following in it:
 
 Follow the path and fix the `jackal_race.world` file. 
 
-Erase all and paste the '1st_floor_L8.world' file(공유 파일 내용만 복붙 just contents) in it:
+Erase all and paste the `1st_floor_L8.world` file(공유 파일 내용만 복붙 just contents) in it:
 
 This map describes L8 1st floor and the last part of the code is related with Actors(Human model).
 
