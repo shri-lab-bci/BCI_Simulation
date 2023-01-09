@@ -320,35 +320,35 @@ GAZEBO setting
               <pose>5 2 0 0 0 -1.57</pose>
             </waypoint>
             <waypoint>
-              <time>2</time>
+              <time>7</time>
               <pose>5 -4.5 0 0 0 -1.57</pose>
             </waypoint>
             <waypoint>
-              <time>2.5</time>
+              <time>8</time>
               <pose>5 -4.5 0 0 0 0</pose>
             </waypoint>
             <waypoint>
-              <time>7</time>
+              <time>21</time>
               <pose>16 -4.5 0 0 0 0</pose>
             </waypoint>
             <waypoint>
-              <time>7.5</time>
+              <time>22</time>
               <pose>16 -4.5 0 0 0 1.57</pose>
             </waypoint>
             <waypoint>
-              <time>10.5</time>
+              <time>29</time>
               <pose>16 2 0 0 0 1.57</pose>
             </waypoint>
             <waypoint>
-              <time>11.5</time>
+              <time>30</time>
               <pose>16 2 0 0 0 3.14</pose>
             </waypoint>
             <waypoint>
-              <time>16.5</time>
+              <time>43</time>
               <pose>5 2 0 0 0 3.14</pose>
             </waypoint>
             <waypoint>
-              <time>17.5</time>
+              <time>44</time>
               <pose>5 2 0 0 0 -1.57</pose>
             </waypoint>
           </trajectory>
