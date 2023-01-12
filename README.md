@@ -225,9 +225,8 @@ def update_object_count(self, data):
         except CvBridgeError as e:
             pass
 ```
-> intrinsic 파라미터 변경
 
-5) Change the 'Object_tf_br.cpp'
+> intrinsic 파라미터 변경
 
 ```bash
 	# 카메라 특성값 설정 변경
@@ -247,6 +246,8 @@ def update_object_count(self, data):
         self.aligned_depth_intrin.ppx = 320.5
         self.aligned_depth_intrin.ppy = 240.5
 ```
+
+5) Change the 'Object_tf_br.cpp'
 
 'Object_tf_br.cpp' 파일 내용 수정사항
 
