@@ -152,7 +152,7 @@ rospy.Subscriber("realsense/depth/image_rect_raw", Image, self.update_depth_imag
             print(e)
 ```
 
->update_object_count 함수 변경
+> update_object_count 함수 변경
 
 ```bash
 def update_object_count(self, data):
@@ -225,7 +225,28 @@ def update_object_count(self, data):
         except CvBridgeError as e:
             pass
 ```
+> intrinsic 파라미터 변경
+
 5) Change the 'Object_tf_br.cpp'
+
+```bash
+	# 카메라 특성값 설정 변경
+        #self.aligned_depth_intrin.fx = 617.44921875
+        #self.aligned_depth_intrin.fy = 617.110168457
+        #self.aligned_depth_intrin.height = 480
+        #self.aligned_depth_intrin.width = 640
+        #self.aligned_depth_intrin.model = rs.distortion.inverse_brown_conrady
+        #self.aligned_depth_intrin.ppx = 328.007507324
+        #self.aligned_depth_intrin.ppy = 241.498748779
+	
+        self.aligned_depth_intrin.fx = 337.2084410968044
+        self.aligned_depth_intrin.fy = 337.2084410968044
+        self.aligned_depth_intrin.height = 480
+        self.aligned_depth_intrin.width = 640
+        self.aligned_depth_intrin.model = rs.distortion.none
+        self.aligned_depth_intrin.ppx = 320.5
+        self.aligned_depth_intrin.ppy = 240.5
+```
 
 'Object_tf_br.cpp' 파일 내용 수정사항
 
