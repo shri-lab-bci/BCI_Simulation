@@ -229,6 +229,7 @@ def update_object_count(self, data):
 > intrinsic 파라미터 변경
 
 ```bash
+	# Camera_Info 메세지의 K행렬에서 해당값들을 찾아볼수 있음.
 	# 카메라 특성값 설정 변경
         #self.aligned_depth_intrin.fx = 617.44921875
         #self.aligned_depth_intrin.fy = 617.110168457
