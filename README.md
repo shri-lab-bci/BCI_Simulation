@@ -385,20 +385,32 @@ GAZEBO setting
 ```
 ## 5. Editing the map
 
+gazebo 실행
 ![Image](https://user-images.githubusercontent.com/86464408/215948844-276bac72-484c-45e9-ad4d-cdf945caacdc.png)
 
-
-![Image](https://user-images.githubusercontent.com/86464408/215949072-f1c416a9-35f8-49d9-83d8-5b27ca747243.png)
-![Image](https://user-images.githubusercontent.com/86464408/215949071-a9068bcc-79b3-4df1-9ec0-bbf49e8e5ef2.png)
+Edit > Model Editor : 모델편집기 실행
 ![Image](https://user-images.githubusercontent.com/86464408/215949075-33b5f585-331e-4109-b21d-d9f69ae46dcf.png)
+
+추가한 경로에 만들어놓은 맵 파일 불러오기
 ![Image](https://user-images.githubusercontent.com/86464408/215949073-110e1f67-4e84-46f7-b8dd-8be833694af3.png)
+맵 파일이 화면에 표시된다.
 ![Image](https://user-images.githubusercontent.com/86464408/215949074-23248c36-e426-4b4b-92ec-3462ba3ef77a.png)
+
+추가한 경로에 만들어놓은 모듈(여기선 wall)이나 Simple Shapes 에서 제공하는 도형들을 편집해서 맵에 추가한다.
 ![Image](https://user-images.githubusercontent.com/86464408/215949079-02d40393-64a4-446b-84a2-28705a46f296.png)
+이동
 ![Image](https://user-images.githubusercontent.com/86464408/215949078-a50218c7-5a05-4457-bb30-54f80a4c058d.png)
+회전
 ![Image](https://user-images.githubusercontent.com/86464408/215949080-aa302c54-c8c3-4078-adfb-e420d6ce8049.png)
+
+File > Save/Save as : 저장
 ![Image](https://user-images.githubusercontent.com/86464408/215949077-e8177f60-23b1-4f15-93f9-079301b4fd6e.png)
 ![Image](https://user-images.githubusercontent.com/86464408/215949076-78258c58-a814-48ee-9fc6-05d1e1ced2da.png)
+
+Gazebo 실행 > 저장한 맵 파일 실행(해당 예제에서는 Untitled23)
 ![Image](https://user-images.githubusercontent.com/86464408/215949082-91a52812-9b83-4d8e-a702-69b8e2613e07.png)
+
+해당 파일을 `jackal_race.world` file에 덮어쓰면 업데이트 완료.(액터같은 요소들은 그대로 두기)
 ![Image](https://user-images.githubusercontent.com/86464408/215949081-57b30b0c-7625-4d64-8c17-c95a0b3cdbba.png)
 
 
