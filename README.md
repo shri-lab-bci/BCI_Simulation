@@ -386,3 +386,19 @@ GAZEBO setting
 ## 5. Editing the map
 
 ![Image](https://user-images.githubusercontent.com/86464408/215948844-276bac72-484c-45e9-ad4d-cdf945caacdc.png)
+
+
+![Image](https://user-images.githubusercontent.com/86464408/215949072-f1c416a9-35f8-49d9-83d8-5b27ca747243.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949071-a9068bcc-79b3-4df1-9ec0-bbf49e8e5ef2.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949075-33b5f585-331e-4109-b21d-d9f69ae46dcf.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949073-110e1f67-4e84-46f7-b8dd-8be833694af3.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949074-23248c36-e426-4b4b-92ec-3462ba3ef77a.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949079-02d40393-64a4-446b-84a2-28705a46f296.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949078-a50218c7-5a05-4457-bb30-54f80a4c058d.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949080-aa302c54-c8c3-4078-adfb-e420d6ce8049.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949077-e8177f60-23b1-4f15-93f9-079301b4fd6e.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949076-78258c58-a814-48ee-9fc6-05d1e1ced2da.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949082-91a52812-9b83-4d8e-a702-69b8e2613e07.png)
+![Image](https://user-images.githubusercontent.com/86464408/215949081-57b30b0c-7625-4d64-8c17-c95a0b3cdbba.png)
+
+
