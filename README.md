@@ -423,7 +423,7 @@ ArUco markers SVG 파일 다운로드 : 2번 링크 <https://chev.me/arucogen/>
 
 1번 링크에서 git clone 하여 $HOME에 다운받는다.
 
-2번 링크에서 받은 마커를 png 파일로 변환하여 gazebo_models/ar_tags/images 폴더 안에 집어넣는다.
+2번 링크에서 받은 마커를 png 파일로 변환하여 gazebo_models/ar_tags/images 폴더 안에 집어넣는다. : 변환하기 링크 <https://svgtopng.com/>
 
 ```bash
 cd gazebo_models/ar_tags/scripts
