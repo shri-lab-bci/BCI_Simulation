@@ -415,7 +415,7 @@ Gazebo 실행 > 저장한 맵 파일 실행(해당 예제에서는 Untitled23)
 해당 파일을 `jackal_race.world` file에 덮어쓰면 업데이트 완료.(액터같은 요소들은 그대로 두기)
 ![Image](https://user-images.githubusercontent.com/86464408/215949081-57b30b0c-7625-4d64-8c17-c95a0b3cdbba.png)
 
-> AR 추가
+> AR 추가 : 참고 링크 <https://www.youtube.com/watch?v=A3fJwTL2O4g>
 
 가제보 디렉토리에 png 파일 폴더 디렉토리 추가하기 :  1번 링크 <https://github.com/mikaelarguedas/gazebo_models>
 
