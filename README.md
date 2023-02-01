@@ -383,3 +383,6 @@ GAZEBO setting
       </actor>
 
 ```
+## 5. Editing the map
+
+![Image](https://user-images.githubusercontent.com/86464408/215948844-276bac72-484c-45e9-ad4d-cdf945caacdc.png)
