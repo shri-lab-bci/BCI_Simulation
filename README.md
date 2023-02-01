@@ -385,6 +385,8 @@ GAZEBO setting
 ```
 ## 5. Editing the map
 
+> 전체 맵 편집
+
 gazebo 실행
 ![Image](https://user-images.githubusercontent.com/86464408/215948844-276bac72-484c-45e9-ad4d-cdf945caacdc.png)
 
@@ -413,4 +415,39 @@ Gazebo 실행 > 저장한 맵 파일 실행(해당 예제에서는 Untitled23)
 해당 파일을 `jackal_race.world` file에 덮어쓰면 업데이트 완료.(액터같은 요소들은 그대로 두기)
 ![Image](https://user-images.githubusercontent.com/86464408/215949081-57b30b0c-7625-4d64-8c17-c95a0b3cdbba.png)
 
+> AR 추가
 
+가제보 디렉토리에 png 파일 폴더 디렉토리 추가하기 :  1번 링크 <https://github.com/mikaelarguedas/gazebo_models>
+
+ArUco markers SVG 파일 다운로드 : 2번 링크 <https://chev.me/arucogen/> 
+
+1번 링크에서 git clone 하여 $HOME에 다운받는다.
+
+2번 링크에서 받은 마커를 png 파일로 변환하여 gazebo_models/ar_tags/images 폴더 안에 집어넣는다.
+
+```bash
+cd gazebo_models/ar_tags/scripts
+```
+
+```bash
+./generate_markers_model.py -i $HOME/gazebo_models/ar_tags/images
+``` 
+
+!)만약 directory 오류가 뜰 경우 기본 가제보 디렉토리($HOME/.gazebo/models)를 비워주면 된다.
+
+```bash
+cd ~/.gazebo
+```
+
+```bash
+rm -r models
+```
+
+```bash
+mkdir models
+```
+Insert 탭에 가제보 디렉토리에 새로운 경로들이 추가된 것을 볼 수 있다. 
+![Image](https://user-images.githubusercontent.com/86464408/215956008-34759b44-b6e4-4794-a100-405568dc07c3.png)
+
+추가한 마커(해당 예제에서는 Marker9번)을 불러와서 맵에 추가해주면 된다. 회전, 이동 편집 가능.
+![Image](https://user-images.githubusercontent.com/86464408/215956009-84e740d8-4856-495f-99cd-38b4490b1332.png)
