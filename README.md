@@ -297,7 +297,7 @@ Terminal5
 rosrun sc_interaction object_tf_br
 ```
 
-You can see the TF or sensor data by 'roslaunch jackal_viz view_robot.launch'.
+You can see the TF or sensor data by `roslaunch jackal_viz view_robot.launch`.
 
 ## 4. Detail
 GAZEBO setting
