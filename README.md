@@ -44,7 +44,7 @@ You can customize the Actor and the objects :
 
 4) Change the 'object_deprojector.py'
 
-## 4. Usage
+## 3. Usage
 ```
 roslaunch jackal_viz view_robot.launch
 roslaunch sc_interaction jackal_sim.launch
