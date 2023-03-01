@@ -1,0 +1,11 @@
+<launch>
+
+  <node pkg="sc_interaction" type="marker_detector.py" name="marker_detector" output="screen"/>
+  <node pkg="sc_interaction" type="object_deprojector.py" name="object_deprojector" output="screen"/>
+
+  <!-- TF -->
+  <node pkg="sc_interaction" type="object_tf_br_node" name="object_tf_br"/>
+  <node pkg="sc_interaction" type="object_tf_lis_node" name="object_tf_lis"/>
+  <node pkg="sc_interaction" type="marker_tf_lis_node" name="marker_tf_lis"/>
+
+</launch>

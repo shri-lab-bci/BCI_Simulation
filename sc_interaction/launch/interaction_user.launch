@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="sc_interaction" type="motion_detector.py" name="motion_detector" output="screen"/>
+  <node pkg="sc_interaction" type="object_filter.py" name="object_filter" output="screen"/>
+
+</launch>
