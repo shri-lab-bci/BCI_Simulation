@@ -5,6 +5,9 @@ BCI_Simulation ROS Gazebo
 * Ojbect Deprojector
 * Object TF BroadCaster
 * L8 시뮬레이션 환경
+
+![Architecture](/assets/images/architecture.png)  
+
 ## 1. Description
 
 - ROS Noetic 
@@ -48,7 +51,6 @@ You can customize the Actor and the objects :
 ```
 roslaunch jackal_viz view_robot.launch
 roslaunch sc_interaction jackal_sim.launch
-
 ```
 ## 4. Etc.
 GAZEBO setting
